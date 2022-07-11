@@ -3,9 +3,10 @@ const cors = require("cors");
 const morgan = require("morgan");
 const { PORT } = require("./config");
 const { NotFoundError } = require("./utils/errors");
+const security = require("./middleware/security");
 const authRoutes = require("./routes/auth");
-const { orders } = require("./routes/orders");
-const { store } = require("./routes/store");
+const orders = require("./routes/orders");
+const store = require("./routes/store");
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 // log requests info
 app.use(morgan("tiny"));
+
+app.use(security.extracrUserFromJwt);
 
 app.use("/auth", authRoutes);
 

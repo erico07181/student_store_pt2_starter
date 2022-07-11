@@ -2,6 +2,7 @@ require("dotenv").config();
 require("colors");
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3002;
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const IS_TESTING = process.env.NODE_ENV === "test";
 
@@ -34,6 +35,7 @@ console.log("---");
 
 module.exports = {
   PORT,
+  SECRET_KEY,
   IS_TESTING,
   BCRYPT_WORK_FACTOR,
   getDatabaseUri,
