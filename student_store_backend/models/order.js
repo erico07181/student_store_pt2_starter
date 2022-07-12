@@ -1,11 +1,11 @@
 const db = require("../db");
 
 class Order {
-  static listOrdersForUser() {
+  static async listOrdersForUser() {
     //
   }
 
-  static createOrder() {
+  static async createOrder() {
     //
   }
 }

@@ -13,8 +13,11 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    res.status(200);
+    const order = Order.createOrder();
+    res.status(200).json({ order });
   } catch (err) {
     console.log("oops, error!");
   }
 });
+
+module.exports = router;

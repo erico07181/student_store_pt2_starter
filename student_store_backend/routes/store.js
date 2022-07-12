@@ -10,3 +10,5 @@ router.get("/", async (req, res, next) => {
     console.log("oops, error!");
   }
 });
+
+module.exports = router;

@@ -7,3 +7,5 @@ CREATE DATABASE student_store;
 
 \i student-store-schema.sql
 \i student-store-seed.sql
+
+SELECT * FROM products
